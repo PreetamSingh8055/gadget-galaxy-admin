@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import AdminLogin from "../pages/auth/AdminLogin";
 import Dashboard from "../pages/dashboard/Dashboard";
 import ProductList from "../pages/products/ProdectList.jsx";
@@ -13,6 +13,8 @@ import Profile from "../pages/profile/Profile";
 const AdminRoutes = () => {
   return (
     <Routes>
+      <Route path="/" element={<Navigate to="/admin/login" replace />} />
+
       {/* Public */}
       <Route path="/admin/login" element={<AdminLogin />} />
 
