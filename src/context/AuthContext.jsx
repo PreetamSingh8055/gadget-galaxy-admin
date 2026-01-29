@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
-import axios from "axios";
+import axiosInstance from "../api/axiosInstance";
 
 const AuthContext = createContext();
 
@@ -10,13 +10,11 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (formData) => {
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/auth/signin",
-        formData,
-        { withCredentials: true }
+      const res = await axiosInstance.post(
+        "/auth/signin",
+        formData
       );
 
-      //  adjust if backend response changes
       const userRole = res.data?.data?.role || "admin";
 
       localStorage.setItem("token", "yes");
@@ -30,9 +28,14 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const logout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("role");
+  const logout = async () => {
+    try {
+      await axiosInstance.get("/auth/logOut");
+    } catch (err) {
+      // ignore
+    }
+
+    localStorage.clear();
     setRole(null);
   };
 
