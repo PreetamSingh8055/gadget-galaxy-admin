@@ -7,8 +7,10 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { useUser } from "../../context/AuthContext";
+import { Menu } from "lucide-react";
 
-const Header = () => {
+
+const Header = ({ onMenuClick }) => {
   const navigate = useNavigate();
   const { logout } = useUser();
   const [open, setOpen] = useState(false);
@@ -31,11 +33,22 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="h-16 bg-gray-950 border-b border-purple-800 flex items-center justify-between px-6">
+    <header className="h-16 bg-gray-950 border-b border-purple-800 flex items-center justify-between px-3 sm:px-6">
       {/* Left */}
-      <h1 className="text-lg font-semibold text-white">
-        Admin Dashboard
-      </h1>
+      <div className="flex items-center gap-3">
+        {/* Mobile menu button */}
+        <button
+          onClick={onMenuClick}
+          className="md:hidden text-gray-300 hover:text-white"
+        >
+          <Menu size={22} />
+        </button>
+
+        <h1 className="text-sm sm:text-lg font-semibold text-white">
+          Admin Dashboard
+        </h1>
+      </div>
+
 
       {/* Right */}
       <div className="relative" ref={menuRef}>

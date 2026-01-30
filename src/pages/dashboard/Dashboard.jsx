@@ -82,16 +82,17 @@ const Dashboard = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="space-y-10"
+      className="space-y-8 sm:space-y-10"
     >
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold">
+        <h1 className="text-xl sm:text-2xl font-bold">
           Admin Dashboard
         </h1>
-        <p className="text-gray-400 text-sm">
+        <p className="text-gray-400 text-xs sm:text-sm">
           Store performance overview
         </p>
+
       </div>
 
       {/* Stat Cards */}
@@ -128,11 +129,11 @@ const Dashboard = () => {
         transition={{ delay: 0.2 }}
         className="bg-gray-900 border border-purple-800 rounded-xl p-6"
       >
-        <h2 className="text-lg font-semibold text-white mb-4">
+        <h2 className="text-lg font-semibold text-white sm:mb-4">
           Revenue Trend
         </h2>
 
-        <div className="h-64">
+        <div className="h-56 sm:h-64">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={revenueData}>
               <CartesianGrid strokeDasharray="3 3" stroke="#333" />

@@ -17,8 +17,21 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black text-purple-300">
-      <div className="bg-gray-900 border border-purple-700 p-8 rounded-xl w-full max-w-md">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-black text-purple-300 px-4">
+
+      {/* Branding Heading */}
+      <div className="text-center mb-8">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-purple-500 tracking-wide">
+          Gadget Shop
+        </h1>
+        <p className="mt-2 text-sm sm:text-base text-purple-300">
+          Admin Panel
+        </p>
+      </div>
+
+      {/* Login Card */}
+      <div className="bg-gray-900 border border-purple-700 p-6 sm:p-8 rounded-xl w-full max-w-md">
+
         <h1 className="text-2xl font-bold text-center mb-6">Admin Login</h1>
 
         <form onSubmit={handleSubmit} className="space-y-4">

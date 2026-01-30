@@ -10,12 +10,12 @@ const Profile = () => {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-start pt-10">
-      <div className="w-full max-w-xl bg-gray-950 border border-purple-800 rounded-xl shadow-lg p-6">
+    <div className="min-h-screen flex justify-center items-start pt-6 sm:pt-10 px-4">
+      <div className="w-full max-w-xl bg-gray-950 border border-purple-800 rounded-xl shadow-lg p-4 sm:p-6">
 
         {/* Header */}
         <div className="flex items-center gap-4 mb-6">
-          <div className="w-16 h-16 rounded-full bg-purple-700/30 flex items-center justify-center text-purple-400 text-2xl font-bold">
+         <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-purple-700/30 flex items-center justify-center text-purple-400 text-xl sm:text-2xl font-bold">
             A
           </div>
 

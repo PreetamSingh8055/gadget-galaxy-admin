@@ -21,14 +21,14 @@ const ProductList = () => {
   return (
     <div className="bg-white rounded-lg shadow p-4">
       {/* Header */}
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 mb-4">
         <h1 className="text-xl font-semibold text-gray-800">
           Products ({products.length})
         </h1>
 
         <Link
           to="/admin/products/create"
-          className="bg-purple-800 text-white px-4 py-2 rounded hover:bg-purple-700"
+          className="bg-purple-800 text-white px-4 py-2 rounded hover:bg-purple-700 text-center sm:w-auto w-full"
         >
           + Add Product
         </Link>
@@ -59,7 +59,7 @@ const ProductList = () => {
                   <img
                     src={p.image}
                     alt={p.name}
-                    className="w-12 h-12 rounded object-cover border"
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded object-cover border"
                   />
                 </td>
 

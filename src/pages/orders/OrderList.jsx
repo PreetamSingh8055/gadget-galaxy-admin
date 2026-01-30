@@ -20,7 +20,7 @@ const OrderList = () => {
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-semibold mb-6 text-gray-800">
+      <h1 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-gray-800">
         Orders
       </h1>
 
@@ -28,13 +28,13 @@ const OrderList = () => {
         <table className="w-full border-collapse">
           <thead className="bg-gray-100 text-gray-700">
             <tr>
-              <th className="p-3 text-left">Order ID</th>
-              <th className="p-3 text-left">Customer</th>
-              <th className="p-3 text-left">Amount</th>
-              <th className="p-3 text-left">Payment</th>
-              <th className="p-3 text-left">Status</th>
-              <th className="p-3 text-left">Date</th>
-              <th className="p-3 text-left">Details</th>
+              <th className="p-2 sm:p-3 font-medium">Order ID</th>
+              <th className="p-2 sm:p-3 font-medium">Customer</th>
+              <th className="p-2 sm:p-3 font-medium">Amount</th>
+              <th className="p-2 sm:p-3 font-medium">Payment</th>
+              <th className="p-2 sm:p-3 font-medium">Status</th>
+              <th className="p-2 sm:p-3 font-medium">Date</th>
+              <th className="p-2 sm:p-3 font-medium">Details</th>
             </tr>
           </thead>
 
@@ -50,7 +50,7 @@ const OrderList = () => {
                     {order.orderId}
                   </td>
 
-                  <td className="p-3">
+                  <td className="p-4 sm:p-6">
                     <div className="text-sm font-medium">
                       {order.user?.userId?.userName}
                     </div>
@@ -65,11 +65,10 @@ const OrderList = () => {
 
                   <td className="p-3">
                     <span
-                      className={`px-2 py-1 text-xs rounded ${
-                        order.payment?.status === "PAID"
+                      className={`px-2 py-1 text-xs rounded ${order.payment?.status === "PAID"
                           ? "bg-green-100 text-green-700"
                           : "bg-yellow-100 text-yellow-700"
-                      }`}
+                        }`}
                     >
                       {order.payment?.method} ·{" "}
                       {order.payment?.status}
@@ -107,8 +106,10 @@ const OrderList = () => {
                 {/* EXPANDED DETAILS */}
                 {openOrderId === order._id && (
                   <tr className="bg-gray-50">
-                    <td colSpan="7" className="p-4">
-                      <div className="grid grid-cols-2 gap-6">
+                   <td colSpan="7" className="p-3 sm:p-4">
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+
 
                         {/* ITEMS */}
                         <div>
@@ -124,8 +125,9 @@ const OrderList = () => {
                                 <img
                                   src={item.image}
                                   alt={item.name}
-                                  className="w-12 h-12 rounded object-cover"
+                                  className="w-10 h-10 sm:w-12 sm:h-12 rounded object-cover"
                                 />
+
                                 <div>
                                   <p className="text-sm font-medium">
                                     {item.name}

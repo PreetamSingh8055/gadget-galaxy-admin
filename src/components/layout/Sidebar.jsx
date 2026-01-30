@@ -28,12 +28,11 @@ const Sidebar = () => {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 px-4 py-6 space-y-2">
+      <nav className="flex-1 px-3 sm:px-4 py-4 sm:py-6 space-y-2">
         <NavLink
           to="/admin/dashboard"
           className={({ isActive }) =>
-            `${baseLink} ${
-              isActive ? activeLink : inactiveLink
+            `${baseLink} ${isActive ? activeLink : inactiveLink
             }`
           }
         >
@@ -44,8 +43,7 @@ const Sidebar = () => {
         <NavLink
           to="/admin/products"
           className={({ isActive }) =>
-            `${baseLink} ${
-              isActive ? activeLink : inactiveLink
+            `${baseLink} ${isActive ? activeLink : inactiveLink
             }`
           }
         >
@@ -56,8 +54,7 @@ const Sidebar = () => {
         <NavLink
           to="/admin/orders"
           className={({ isActive }) =>
-            `${baseLink} ${
-              isActive ? activeLink : inactiveLink
+            `${baseLink} ${isActive ? activeLink : inactiveLink
             }`
           }
         >
